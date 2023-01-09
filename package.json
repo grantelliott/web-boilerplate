@@ -1,0 +1,22 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "description": "Starting point for building static sites",
+  "scripts": {
+    "clean": "del dist",
+    "watch:sass": "sass --watch src/assets/scss:dist/assets/css",
+    "build:sass": "sass src/assets/scss:dist/assets/css",
+    "watch:eleventy": "eleventy --serve",
+    "build:eleventy": "eleventy",
+    "start": "npm-run-all build:sass --parallel watch:*",
+    "build": "npm-run-all build:*"
+  },
+  "author": "Grant Elliott",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.2",
+    "del-cli": "^5.0.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.57.1"
+  }
+}
