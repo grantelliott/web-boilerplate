@@ -4,19 +4,23 @@
   "description": "Starting point for building static sites",
   "scripts": {
     "clean": "del dist",
-    "watch:sass": "sass --watch src/assets/scss:dist/assets/css",
-    "build:sass": "sass src/assets/scss:dist/assets/css",
     "watch:eleventy": "eleventy --serve",
     "build:eleventy": "eleventy",
-    "start": "npm-run-all build:sass --parallel watch:*",
+    "watch:stylesheets": "tailwindcss -i ./src/assets/css/styles.css -o ./dist/assets/css/styles.css --watch",
+    "build:stylesheets": "tailwindcss -i ./src/assets/css/styles.css -o ./dist/assets/css/styles.css --minify",
+    "start": "npm-run-all build:stylesheets --parallel watch:*",
     "build": "npm-run-all build:*"
   },
   "author": "Grant Elliott",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.2",
+    "@tailwindcss/forms": "^0.5.3",
+    "@tailwindcss/typography": "^0.5.8",
     "del-cli": "^5.0.0",
     "npm-run-all": "^4.1.5",
-    "sass": "^1.57.1"
+    "prettier": "^2.8.2",
+    "prettier-plugin-tailwindcss": "^0.2.1",
+    "tailwindcss": "^3.2.4"
   }
 }
