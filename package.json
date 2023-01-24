@@ -9,7 +9,7 @@
     "watch:stylesheets": "tailwindcss -i ./src/assets/css/styles.css -o ./dist/assets/css/styles.css --watch",
     "build:stylesheets": "tailwindcss -i ./src/assets/css/styles.css -o ./dist/assets/css/styles.css --minify",
     "start": "npm-run-all build:stylesheets --parallel watch:*",
-    "build": "npm-run-all build:*"
+    "build": "npm-run-all -s clean build:*"
   },
   "author": "Grant Elliott",
   "license": "ISC",
