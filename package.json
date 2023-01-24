@@ -8,6 +8,8 @@
     "build:eleventy": "eleventy",
     "watch:stylesheets": "tailwindcss -i ./src/assets/css/styles.css -o ./dist/assets/css/styles.css --watch",
     "build:stylesheets": "tailwindcss -i ./src/assets/css/styles.css -o ./dist/assets/css/styles.css --minify",
+    "watch:scripts": "esbuild src/assets/js/scripts.js --bundle --outfile=dist/assets/js/scripts.js --watch",
+    "build:scripts": "esbuild src/assets/js/scripts.js --bundle --outfile=dist/assets/js/scripts.js --minify",
     "start": "npm-run-all build:stylesheets --parallel watch:*",
     "build": "npm-run-all -s clean build:*"
   },
@@ -18,6 +20,7 @@
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.8",
     "del-cli": "^5.0.0",
+    "esbuild": "^0.17.4",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.8.2",
     "prettier-plugin-tailwindcss": "^0.2.1",
