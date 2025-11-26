@@ -1,14 +1,7 @@
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("src/assets/images");
-  eleventyConfig.setBrowserSyncConfig({
-		files: './dist/assets/**/*.css'
-	});
-  // Return your Object options:
-  return {
-    dir: {
-      input: "src",
-      output: "dist",
-      layouts: "_layouts"
-    }
-  }
+export default function (eleventyConfig) {
+  eleventyConfig.setInputDirectory("src");
+  eleventyConfig.setIncludesDirectory("_includes");
+  eleventyConfig.setLayoutsDirectory("_layouts");
+	eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
 };
